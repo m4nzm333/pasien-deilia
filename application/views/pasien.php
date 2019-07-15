@@ -185,11 +185,11 @@
 		        </button>
 		      </div>
 		      <div class="modal-body">
-						Ingin menghapus pasien <a href="javascript:void(0)">Pasien1</a> ?
+						Ingin menghapus pasien <a href="javascript:void(0)" id="formHapusPasienJudul"></a> ?
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		        <button type="button" class="btn btn-danger">Hapus</button>
+		        <a id="btnModalHapus" class="btn btn-danger">Hapus</a>
 		      </div>
 		    </div>
 		  </div>
@@ -221,11 +221,9 @@
 						$('#formEditPasienJudul').text(data.nama);
 						$('#formEditPasien').trigger('reset');
 						$('#inputNamaEdit').val(data.nama);
-
 						var mydate = new Date(data.tanggal_lahir);
 						mydate = (moment(mydate).format('DD/MM/YYYY'));
 						$('#inputTanggalLahirEdit').val(mydate);
-
 						$('#inputUmurEdit').val(data.umur);
 						$('#inputHPEdit').val(data.no_hp);
 						$('#inputAlamatEdit').val(data.alamat);
@@ -238,6 +236,16 @@
 			}
 			function hapus_pasien(id) {
 				console.log('Hapus Pasien ' + id);
+				$.ajax({
+					url : base_url + 'admin/pasien/data/' + id,
+					method : 'GET',
+					success : function(respond) {
+						var data = JSON.parse(respond);
+						console.log(data);
+						$('#formHapusPasienJudul').text(data.nama);
+						$('#btnModalHapus').attr('href', base_url + 'admin/pasien/hapus/' + id);
+					}
+				});
 				$('#modalHapusPasien').modal('show');
 			}
 			$( "#inputTanggalLahir" ).datepicker({

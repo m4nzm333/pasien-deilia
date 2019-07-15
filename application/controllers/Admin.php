@@ -38,9 +38,11 @@ class Admin extends CI_Controller {
 		$data['alamat'] = $this->input->post('inputAlamat');
 		$data['no_hp'] = $this->input->post('inputHP');
 		$data['riwayat_alergi'] = $this->input->post('inputRiwayatAlergi');
-		$date = new DateTime($data['tanggal_lahir']);
-	  $data['tanggal_lahir'] = date_format($date, 'Y-d-m');
-		// $this->PasienModel->insert_pasien($data);
+		// echo $data['tanggal_lahir'];
+		$date = date_create_from_format( 'd/m/Y' ,$data['tanggal_lahir']);
+	 	$data['tanggal_lahir'] = date_format($date, 'Y-m-d');
+
+		$this->PasienModel->insert_pasien($data);
 		if($this->PasienModel->insert_pasien($data) == true)
 		{
 			$this->session->set_flashdata('success', 'Data pasien telah dimasukkan.');
@@ -59,13 +61,24 @@ class Admin extends CI_Controller {
 		$data['alamat'] = $this->input->post('inputAlamatEdit');
 		$data['no_hp'] = $this->input->post('inputHPEdit');
 		$data['riwayat_alergi'] = $this->input->post('inputRiwayatAlergiEdit');
-		$date = new DateTime($data['tanggal_lahir']);
-	  $data['tanggal_lahir'] = date_format($date, 'Y-d-m');
+		$date = date_create_from_format( 'd/m/Y' ,$data['tanggal_lahir']);
+	 	$data['tanggal_lahir'] = date_format($date, 'Y-m-d');
 		if($this->PasienModel->update_pasien_by_id($id_pasien, $data) == true)
 		{
 			$this->session->set_flashdata('success', 'Data pasien telah diperbarui.');
 		} else {
 			$this->session->set_flashdata('error', 'Data pasien tidak dapat diperbarui.');
+		}
+		redirect('admin/pasien');
+	}
+	public function pasien_hapus($id_pasien)
+	{
+		$this->load->model('PasienModel');
+		if($this->PasienModel->delete_pasien_by_id($id_pasien) == true)
+		{
+			$this->session->set_flashdata('warnign', 'Data pasien telah dihapus.');
+		} else {
+			$this->session->set_flashdata('error', 'Data pasien tidak dapat dihapus.');
 		}
 		redirect('admin/pasien');
 	}
