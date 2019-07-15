@@ -8,5 +8,10 @@ class PerawatanModel extends CI_Model {
     $this->db->insert('perawatan', $data);
     return $this->db->insert_id();
   }
+  public function get_perawatan_by_id_pasien($id_pasien)
+  {
+    $this->db->where('id_pasien', $id_pasien);
+    return $this->db->get('perawatan')->result_array();
+  }
 
 }

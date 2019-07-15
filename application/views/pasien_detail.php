@@ -30,8 +30,10 @@
 
 		<div class="container-fluid">
 			<div class="row">
+				<?php $this->load->view('include/notification'); ?>
+			</div>
+			<div class="row">
 				<div class="col-md-4">
-					<?php $this->load->view('include/notification'); ?>
 					<div class="card">
 						<div class="card-body">
 							<div class="container-fluid">
@@ -151,24 +153,26 @@
 									    </tr>
 									  </thead>
 									  <tbody>
+											<?php $i = 1; foreach($pasien['perawatan'] as $row){ ?>
 											<tr>
-												<td>1</td>
-												<td>2019-1-1</td>
-												<td>Gigi Berlubang</td>
-												<td>Santet</td>
-												<td>Rp. 100.000.000,-</td>
-												<td>-</td>
+												<td><?php echo $i++; ?></td>
+												<td><?php echo $row['tanggal']; ?></td>
+												<td><?php echo $row['diagnosa']; ?></td>
+												<td><?php echo $row['terapi']; ?></td>
+												<td>Rp. <?php echo number_format($row['biaya'], 2, ',', '.'); ?>,-</td>
+												<td><?php echo $row['keterangan']; ?></td>
 												<td>
-													<button type="button" name="button" id="btnEdit" class="btn btn-primary" onclick="edit_perawatan(1)">
+													<button type="button" name="button" id="btnEdit" class="btn btn-primary" onclick="edit_perawatan(<?php echo $row['id_perawatan']; ?>)">
 														<i class="fa fa-edit"></i>
 														Edit
 													</button>
-													<button type="button" name="button" id="btnHapus" class="btn btn-danger" onclick="hapus_perawatan(1)">
+													<button type="button" name="button" id="btnHapus" class="btn btn-danger" onclick="hapus_perawatan(<?php echo $row['id_perawatan']; ?>)">
 														<i class="fa fa-trash"></i>
 														Hapus
 													</button>
 												</td>
 											</tr>
+											<?php } ?>
 									  </tbody>
 									</table>
 								</div>
@@ -176,11 +180,8 @@
 						</div>
 					</div>
 					<br>
-
-
 				</div>
 			</div>
-
 		</div>
 
 		<div class="modal fade" id="modalEditPerawatan" tabindex="-1" role="dialog" aria-labelledby="modalEditPerawatanLabel" aria-hidden="true">
