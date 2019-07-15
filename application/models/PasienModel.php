@@ -12,5 +12,17 @@ class PasienModel extends CI_Model {
   {
     return $this->db->get('pasien')->result_array();
   }
+  public function get_pasien_by_id($id_pasien)
+  {
+    $this->db->where('id_pasien', $id_pasien);
+    return $this->db->get('pasien')->row_array();
+  }
+  public function update_pasien_by_id($id_pasien, $data)
+  {
+    $this->db->set('last_update', 'NOW()', FALSE);
+    $this->db->where('id_pasien', $id_pasien);
+    $this->db->update('pasien', $data);
+    return $this->db->affected_rows();
+  }
 
 }

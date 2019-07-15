@@ -55,4 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['admin'] = 'admin/pasien';
 $route['admin/pasien/tambah'] = 'admin/pasien_tambah';
+$route['admin/pasien/data/(:any)'] = 'admin/get_pasien_by_id/$1';
+$route['admin/pasien/edit/(:any)'] = 'admin/pasien_edit/$1';
 $route['admin/pasien/detail/(:any)'] = 'admin/pasien_detail/$1';

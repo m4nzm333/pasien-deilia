@@ -133,7 +133,7 @@
 				<form method="post" action="#" id="formEditPasien">
 			    <div class="modal-content">
 			      <div class="modal-header">
-			        <h5 class="modal-title" id="modalEditPasienLabel">Edit Pasien <a href="javascript:void(0)">Pasien1</a></h5>
+			        <h5 class="modal-title" id="modalEditPasienLabel">Edit Pasien <a href="javascript:void(0)" id="formEditPasienJudul"></a></h5>
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			          <span aria-hidden="true">&times;</span>
 			        </button>
@@ -154,11 +154,15 @@
 									</div>
 									<div class="form-group col-md-12">
 										<label for="inputAlamatEdit">Alamat</label>
-										<input type="text" class="form-control" name="inputAlamat" id="inputAlamatEdit" placeholder="Nama Pasien" required>
+										<input type="text" class="form-control" name="inputAlamatEdit" id="inputAlamatEdit" placeholder="Nama Pasien" required>
 									</div>
 									<div class="form-group col-md-12">
+								    <label for="inputHPEdit">Nomor Hp</label>
+								    <input type="text" class="form-control" name="inputHPEdit" id="inputHPEdit" placeholder="Nomor HP" required>
+								  </div>
+									<div class="form-group col-md-12">
 										<label for="inputRiwayatAlergiEdit">Riwayat Alergi </label>
-										<textarea name="inputRiwayatAlergiEdit" rows="5" cols="80" class="form-control" placeholder="Riwayat Alergi"></textarea>
+										<textarea name="inputRiwayatAlergiEdit" id="inputRiwayatAlergiEdit" rows="5" cols="80" class="form-control" placeholder="Riwayat Alergi"></textarea>
 									</div>
 							</div>
 			      </div>
@@ -198,6 +202,7 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
 		<script type="text/javascript">
 			var base_url = '<?php echo base_url(); ?>';
 			var counterDT = 0;
@@ -207,7 +212,29 @@
 
 			function edit_pasien(id) {
 				console.log('Edit Pasien ' + id);
-				$('#modalEditPasien').modal('show');
+				$.ajax({
+					url : base_url + 'admin/pasien/data/' + id,
+					method : 'GET',
+					success : function(respond) {
+						var data = JSON.parse(respond);
+						console.log(data);
+						$('#formEditPasienJudul').text(data.nama);
+						$('#formEditPasien').trigger('reset');
+						$('#inputNamaEdit').val(data.nama);
+
+						var mydate = new Date(data.tanggal_lahir);
+						mydate = (moment(mydate).format('DD/MM/YYYY'));
+						$('#inputTanggalLahirEdit').val(mydate);
+
+						$('#inputUmurEdit').val(data.umur);
+						$('#inputHPEdit').val(data.no_hp);
+						$('#inputAlamatEdit').val(data.alamat);
+						$('#inputRiwayatAlergiEdit').val(data.riwayat_alergi);
+						$('#formEditPasien').attr('action', base_url + 'admin/pasien/edit/' + id);
+						$('#modalEditPasien').modal('show');
+					}
+				});
+
 			}
 			function hapus_pasien(id) {
 				console.log('Hapus Pasien ' + id);
