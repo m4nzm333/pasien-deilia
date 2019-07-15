@@ -66,8 +66,13 @@ class Admin extends CI_Controller {
 	public function pasien_hapus($id_pasien)
 	{
 		$this->load->model('PasienModel');
+		$this->load->model('PerawatanModel');
 		if($this->PasienModel->delete_pasien_by_id($id_pasien) == true)
 		{
+			$data = $this->PerawatanModel->get_perawatan_by_id_pasien($id_pasien);
+			foreach ($data as $row) {
+				$this->PerawatanModel->delete_perawatan_by_id($row['id_perawatan']);
+			}
 			$this->session->set_flashdata('warning', 'Data pasien telah dihapus.');
 		} else {
 			$this->session->set_flashdata('error', 'Data pasien tidak dapat dihapus.');
