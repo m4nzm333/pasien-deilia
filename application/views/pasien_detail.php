@@ -249,7 +249,7 @@
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		        <button type="button" class="btn btn-danger">Hapus</button>
+		        <a class="btn btn-danger" id="btnModalHapus">Hapus</a>
 		      </div>
 		    </div>
 		  </div>
@@ -295,14 +295,13 @@
 						$('#inputBiayaEdit').val(data.biaya);
 						$('#inputKeteranganEdit').val(data.keterangan);
 						$('#formEditPerawatan').attr('action', base_url + 'admin/pasien/'+id_pasien+'/perawatan/'+ id + '/edit');
-						// $('#modalEditPasien').modal('show');
+						$('#modalEditPerawatan').modal('show');
 					}
 				})
-
-				$('#modalEditPerawatan').modal('show');
 			}
 			function hapus_perawatan(id) {
 				console.log('Hapus Perawatan ' + id);
+				$('#btnModalHapus').attr('href', base_url + 'admin/pasien/'+id_pasien+'/perawatan/'+ id + '/hapus');
 				$('#modalHapusPerawatan').modal('show');
 			}
 		</script>

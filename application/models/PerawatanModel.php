@@ -25,4 +25,10 @@ class PerawatanModel extends CI_Model {
     $this->db->update('perawatan', $data);
     return $this->db->affected_rows();
   }
+  public function delete_perawatan_by_id($id_perawatan)
+  {
+    $this->db->where('id_perawatan', $id_perawatan);
+    $this->db->delete('perawatan');
+    return $this->db->affected_rows();
+  }
 }

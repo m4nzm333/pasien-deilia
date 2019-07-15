@@ -135,4 +135,15 @@ class Admin extends CI_Controller {
 		}
 		redirect('admin/pasien/'.$id_pasien.'/detail');
 	}
+	public function perawatan_hapus($id_pasien, $id_perawatan)
+	{
+		$this->load->model('PerawatanModel');
+		if($this->PerawatanModel->delete_perawatan_by_id($id_perawatan) == true)
+		{
+			$this->session->set_flashdata('warning', 'Data perawatan telah dihapus.');
+		} else {
+			$this->session->set_flashdata('error', 'Data perawatan tidak dapat dihapus.');
+		}
+		redirect('admin/pasien/'.$id_pasien.'/detail');
+	}
 }

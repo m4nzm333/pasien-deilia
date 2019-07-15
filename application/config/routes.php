@@ -63,3 +63,4 @@ $route['admin/pasien/hapus/(:any)'] = 'admin/pasien_hapus/$1';
 $route['admin/pasien/(:any)/perawatan/tambah'] = 'admin/perawatan_tambah/$1';
 $route['admin/pasien/(:any)/perawatan/(:any)/data'] = 'admin/get_perawatan_by_id/$2';
 $route['admin/pasien/(:any)/perawatan/(:any)/edit'] = 'admin/perawatan_edit/$1/$2';
+$route['admin/pasien/(:any)/perawatan/(:any)/hapus'] = 'admin/perawatan_hapus/$1/$2';
