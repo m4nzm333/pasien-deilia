@@ -16,17 +16,13 @@ class Admin extends CI_Controller {
 
 	}
 
+	// PASIEN
 	public function pasien()
 	{
 		$this->load->model('PasienModel');
 		$data['pasien'] = $this->PasienModel->get_pasien_all();
 
 		$this->load->view('pasien', $data);
-	}
-
-	public function pasien_detail($id)
-	{
-		$this->load->view('pasien_detail');
 	}
 	public function pasien_tambah()
 	{
@@ -38,11 +34,8 @@ class Admin extends CI_Controller {
 		$data['alamat'] = $this->input->post('inputAlamat');
 		$data['no_hp'] = $this->input->post('inputHP');
 		$data['riwayat_alergi'] = $this->input->post('inputRiwayatAlergi');
-		// echo $data['tanggal_lahir'];
 		$date = date_create_from_format( 'd/m/Y' ,$data['tanggal_lahir']);
 	 	$data['tanggal_lahir'] = date_format($date, 'Y-m-d');
-
-		$this->PasienModel->insert_pasien($data);
 		if($this->PasienModel->insert_pasien($data) == true)
 		{
 			$this->session->set_flashdata('success', 'Data pasien telah dimasukkan.');
@@ -54,7 +47,6 @@ class Admin extends CI_Controller {
 	public function pasien_edit($id_pasien)
 	{
 		$this->load->model('PasienModel');
-		// echo json_encode($this->input->post());
 		$data['nama'] = $this->input->post('inputNamaEdit');
 		$data['umur'] = $this->input->post('inputUmurEdit');
 		$data['tanggal_lahir'] = $this->input->post('inputTanggalLahirEdit');
@@ -76,7 +68,7 @@ class Admin extends CI_Controller {
 		$this->load->model('PasienModel');
 		if($this->PasienModel->delete_pasien_by_id($id_pasien) == true)
 		{
-			$this->session->set_flashdata('warnign', 'Data pasien telah dihapus.');
+			$this->session->set_flashdata('warning', 'Data pasien telah dihapus.');
 		} else {
 			$this->session->set_flashdata('error', 'Data pasien tidak dapat dihapus.');
 		}
@@ -87,5 +79,34 @@ class Admin extends CI_Controller {
 		$this->load->model('PasienModel');
 		$data = $this->PasienModel->get_pasien_by_id($id_pasien);
 		echo json_encode($data);
+	}
+
+	// PERAWATAN
+	public function pasien_detail($id_pasien)
+	{
+		$this->load->model('PasienModel');
+		$data['pasien'] = $this->PasienModel->get_pasien_by_id($id_pasien);
+		$this->load->view('pasien_detail', $data);
+	}
+	public function perawatan_tambah($id_pasien)
+	{
+		$this->load->model('PerawatanModel');
+		$data['id_pasien'] = $id_pasien;
+		$data['diagnosa'] = $this->input->post('inputDiagnosa');
+		$data['terapi'] = $this->input->post('inputTerapi');
+		$data['biaya'] = $this->input->post('inputBiaya');
+		$data['keterangan'] = $this->input->post('inputKeterangan');
+		$data['tanggal'] = $this->input->post('inputTanggal');
+		$date = date_create_from_format( 'd/m/Y' ,$data['tanggal']);
+	 	$data['tanggal'] = date_format($date, 'Y-m-d');
+
+		echo var_dump($data);
+		if($this->PerawatanModel->insert_perawatan($data) == true)
+		{
+			$this->session->set_flashdata('success', 'Data perawatan telah ditambahkan.');
+		} else {
+			$this->session->set_flashdata('error', 'Data perawatan tidak dapat ditambahkan.');
+		}
+		redirect('admin/pasien/detail/'.$id_pasien);
 	}
 }
