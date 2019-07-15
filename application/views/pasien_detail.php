@@ -30,7 +30,9 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<?php $this->load->view('include/notification'); ?>
+				<div class="col-md-12">
+					<?php $this->load->view('include/notification'); ?>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-4">
@@ -262,6 +264,8 @@
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
 		<script type="text/javascript">
+			var base_url = '<?php echo base_url(); ?>';
+			var id_pasien = '<?php echo $pasien['id_pasien']; ?>';
 			$('#tabelPerawatan').DataTable();
 			$( "#inputTanggal" ).datepicker({
 	      changeMonth: true,
@@ -276,7 +280,25 @@
 				yearRange: '1940:' + new Date().getFullYear()
 	    });
 			function edit_perawatan(id) {
-				console.log('Hapus Perawatan ' + id);
+				console.log('Edit Perawatan ' + id);
+				$.ajax({
+					url : base_url + 'admin/pasien/'+ id_pasien + '/perawatan/' + id + '/data',
+					method : 'GET',
+					success : function(respond) {
+						var data = JSON.parse(respond);
+						console.log(data);
+						var mydate = new Date(data.tanggal);
+						mydate = (moment(mydate).format('DD/MM/YYYY'));
+						$('#inputTanggalEdit').val(mydate);
+						$('#inputDiagnosaEdit').val(data.diagnosa);
+						$('#inputTerapiEdit').val(data.terapi);
+						$('#inputBiayaEdit').val(data.biaya);
+						$('#inputKeteranganEdit').val(data.keterangan);
+						$('#formEditPerawatan').attr('action', base_url + 'admin/pasien/'+id_pasien+'/perawatan/'+ id + '/edit');
+						// $('#modalEditPasien').modal('show');
+					}
+				})
+
 				$('#modalEditPerawatan').modal('show');
 			}
 			function hapus_perawatan(id) {

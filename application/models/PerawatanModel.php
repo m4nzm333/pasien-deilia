@@ -13,5 +13,16 @@ class PerawatanModel extends CI_Model {
     $this->db->where('id_pasien', $id_pasien);
     return $this->db->get('perawatan')->result_array();
   }
-
+  public function get_perawatan_by_id($id_perawatan)
+  {
+    $this->db->where('id_perawatan', $id_perawatan);
+    return $this->db->get('perawatan')->row_array();
+  }
+  public function update_perawatan_by_id($id_perawatan, $data)
+  {
+    $this->db->set('last_update', 'NOW()', FALSE);
+    $this->db->where('id_perawatan', $id_perawatan);
+    $this->db->update('perawatan', $data);
+    return $this->db->affected_rows();
+  }
 }

@@ -101,8 +101,6 @@ class Admin extends CI_Controller {
 		$data['tanggal'] = $this->input->post('inputTanggal');
 		$date = date_create_from_format( 'd/m/Y' ,$data['tanggal']);
 	 	$data['tanggal'] = date_format($date, 'Y-m-d');
-
-		echo var_dump($data);
 		if($this->PerawatanModel->insert_perawatan($data) == true)
 		{
 			$this->session->set_flashdata('success', 'Data perawatan telah ditambahkan.');
@@ -110,5 +108,31 @@ class Admin extends CI_Controller {
 			$this->session->set_flashdata('error', 'Data perawatan tidak dapat ditambahkan.');
 		}
 		redirect('admin/pasien/detail/'.$id_pasien);
+	}
+	public function get_perawatan_by_id($id_perawatan)
+	{
+		// echo $id_perawatan;
+		$this->load->model('PerawatanModel');
+		$data = $this->PerawatanModel->get_perawatan_by_id($id_perawatan);
+		echo json_encode($data);
+	}
+	public function perawatan_edit($id_pasien, $id_perawatan)
+	{
+		$this->load->model('PerawatanModel');
+		$data['diagnosa'] = $this->input->post('inputDiagnosaEdit');
+		$data['terapi'] = $this->input->post('inputTerapiEdit');
+		$data['biaya'] = $this->input->post('inputBiayaEdit');
+		$data['keterangan'] = $this->input->post('inputKeteranganEdit');
+		$data['tanggal'] = $this->input->post('inputTanggalEdit');
+		$date = date_create_from_format( 'd/m/Y' ,$data['tanggal']);
+	 	$data['tanggal'] = date_format($date, 'Y-m-d');
+
+		if($this->PerawatanModel->update_perawatan_by_id($id_perawatan, $data) == true)
+		{
+			$this->session->set_flashdata('success', 'Data perawatan telah diperbarui.');
+		} else {
+			$this->session->set_flashdata('error', 'Data perawatan tidak dapat diperbarui.');
+		}
+		redirect('admin/pasien/'.$id_pasien.'/detail');
 	}
 }

@@ -104,7 +104,7 @@
 											<td><?php echo $row['alamat']; ?></td>
 											<td><?php echo $row['no_hp']; ?></td>
 											<td>
-												<a href="<?php echo base_url(); ?>admin/pasien/detail/<?php echo $row['id_pasien']; ?>" class="btn btn-success">
+												<a href="<?php echo base_url(); ?>admin/pasien/<?php echo $row['id_pasien']; ?>/detail" class="btn btn-success">
 													<i class="fa fa-list"></i>
 													Detail
 												</a>
