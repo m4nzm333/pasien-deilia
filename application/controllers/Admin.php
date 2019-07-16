@@ -36,6 +36,7 @@ class Admin extends CI_Controller {
 		$data['riwayat_alergi'] = $this->input->post('inputRiwayatAlergi');
 		$date = date_create_from_format( 'd/m/Y' ,$data['tanggal_lahir']);
 	 	$data['tanggal_lahir'] = date_format($date, 'Y-m-d');
+		$this->PasienModel->insert_pasien($data);
 		if($this->PasienModel->insert_pasien($data) == true)
 		{
 			$this->session->set_flashdata('success', 'Data pasien telah dimasukkan.');
@@ -112,7 +113,7 @@ class Admin extends CI_Controller {
 		} else {
 			$this->session->set_flashdata('error', 'Data perawatan tidak dapat ditambahkan.');
 		}
-		redirect('admin/pasien/detail/'.$id_pasien);
+		redirect('admin/pasien/'.$id_pasien.'/detail');
 	}
 	public function get_perawatan_by_id($id_perawatan)
 	{
