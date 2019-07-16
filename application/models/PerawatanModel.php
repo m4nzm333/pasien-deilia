@@ -32,6 +32,12 @@ class PerawatanModel extends CI_Model {
     $this->db->delete('perawatan');
     return $this->db->affected_rows();
   }
+  public function get_count_perawatan()
+  {
+    $this->db->select('sum(biaya) as total');
+    $data = $this->db->get('perawatan')->row_array();
+    return $data['total'];
+  }
 
   public function get_now()
   {

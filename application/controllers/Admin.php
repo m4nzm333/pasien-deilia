@@ -13,7 +13,11 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-
+		$this->load->model('PasienModel');
+		$this->load->model('PerawatanModel');
+		$data['sum_pasien'] = $this->PasienModel->get_count_pasien();
+		$data['sum_perawatan'] = $this->PerawatanModel->get_count_perawatan();
+		$this->load->view('home', $data);
 	}
 
 	// PASIEN

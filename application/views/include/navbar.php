@@ -3,6 +3,24 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
+      <a class="btn btn-primary nav-item nav-link text-light" href="<?php echo base_url(); ?>admin">
+				<img src="<?php echo base_url(); ?>asset/img/transaction.png" height="50px" width="50px"  alt="">
+					Home
+			</a>
+			&nbsp
+			<a class="btn btn-primary nav-item nav-link text-light" href="<?php echo base_url(); ?>admin/pasien">
+				<img src="<?php echo base_url(); ?>asset/img/cd.png" height="50px" width="50px" alt="">
+					Pasien
+			</a>
+      &nbsp
+      <a class="btn btn-primary nav-item nav-link text-light" href="<?php echo base_url(); ?>admin/pelaporan">
+				<img src="<?php echo base_url(); ?>asset/img/cd.png" height="50px" width="50px" alt="">
+					Rekapitulasi
+			</a>
+    </div>
+
   </div>
 	<div class="my-2 my-sm-0">
 		<img src="<?php echo base_url(); ?>asset/img/icon.png" alt="" height="50px" width="50px">

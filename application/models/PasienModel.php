@@ -31,6 +31,10 @@ class PasienModel extends CI_Model {
     $this->db->delete('pasien');
     return $this->db->affected_rows();
   }
+  public function get_count_pasien()
+  {
+    return $this->db->get('pasien')->num_rows();
+  }
 
   public function get_now()
   {
