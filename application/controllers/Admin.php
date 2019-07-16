@@ -36,7 +36,7 @@ class Admin extends CI_Controller {
 		$data['riwayat_alergi'] = $this->input->post('inputRiwayatAlergi');
 		$date = date_create_from_format( 'd/m/Y' ,$data['tanggal_lahir']);
 	 	$data['tanggal_lahir'] = date_format($date, 'Y-m-d');
-		$this->PasienModel->insert_pasien($data);
+		// $this->PasienModel->insert_pasien($data);
 		if($this->PasienModel->insert_pasien($data) == true)
 		{
 			$this->session->set_flashdata('success', 'Data pasien telah dimasukkan.');

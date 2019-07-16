@@ -4,6 +4,7 @@
 	<title>Login</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php base_url(); ?>asset/costum/css/login.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body style="background: url('<?php base_url();?>asset/img/cover_login.jpg')">
 	<div class="wrapper fadeInDown">

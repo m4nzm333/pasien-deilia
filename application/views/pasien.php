@@ -47,7 +47,7 @@
 								  </div>
 									<div class="form-group col-md-12">
 								    <label for="inputUmur">Umur</label>
-								    <input type="text" class="form-control" name="inputUmur" id="inputUmur" placeholder="Nama Pasien" required>
+								    <input type="text" class="form-control" name="inputUmur" id="inputUmur" placeholder="Umur" required>
 								  </div>
 									<div class="form-group col-md-12">
 								    <label for="inputTanggalLahir">Tanggal Lahir</label>
@@ -82,7 +82,7 @@
 					<div class="card">
 						<div class="card-body">
 							<h1>Tabel Pasien</h1>
-							<table class="table table-bordered table-striped table-responsive" id="tabelPasien">
+							<table class="table table-bordered table-striped" id="tabelPasien">
 							  <thead>
 							    <tr>
 							      <th scope="col">No.</th>
