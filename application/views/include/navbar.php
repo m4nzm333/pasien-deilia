@@ -5,7 +5,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
   </div>
 	<div class="my-2 my-sm-0">
-		<img src="https://via.placeholder.com/50x50" alt="" height="50px" width="50px" class="rounded-circle">
+		<img src="<?php echo base_url(); ?>asset/img/icon.png" alt="" height="50px" width="50px">
 		&nbsp
 		<a class="navbar-brand text-light"><?php echo $this->session->userdata('nama'); ?></a>
 		<a class="btn btn-danger" href="<?php echo base_url(); ?>login/keluar">Keluar</a>

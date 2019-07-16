@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Login</title>
+	<link rel="icon" href="<?php echo base_url(); ?>asset/img/icon.png">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php base_url(); ?>asset/costum/css/login.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@
 	  <div id="formContent">
 	    <div class="fadeIn first">
 				<br>
-				<img src="https://via.placeholder.com/150x150" alt="Logo">
+				<img src="<?php echo base_url(); ?>asset/img/logo.png" alt="Logo" width="150px" height="150px">
 	      <h1><small>Praktek Dokter Gigi Deilia</small></h1>
 				<p>
 					Kompleks Ruko BRI Puyung No.10 <br>

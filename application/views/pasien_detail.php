@@ -2,6 +2,7 @@
 	<head>
 	    <title>Detail | Deiia</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="icon" href="<?php echo base_url(); ?>asset/img/icon.png">
 	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 			<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 			<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
