@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login | Pasien Deilia</title>
+	<title>Home | Pasien Deilia</title>
 	<link rel="icon" href="<?php echo base_url(); ?>asset/img/icon.png">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="<?php base_url(); ?>asset/costum/css/login.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/costum/css/login.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="bg-dark">
+	<div class="container-fluid">
+		<br>
+		<a href="<?php echo base_url(); ?>login/keluar" class="btn btn-primary btn-lg">
+			<i class="fa fa-sign-out"></i>
+			Kembali
+		</a>
+	</div>
 	<div class="wrapper fadeInDown">
 		<?php $this->load->view('include/notification') ?>
 		<div class="row">
@@ -28,7 +35,7 @@
 				</a>
 			</div>
 			<div class="col-md-6">
-				<a href="<?php echo base_url(); ?>admin/pasien">
+				<a href="<?php echo base_url(); ?>admin/pelaporan">
 					<div class="card text-white bg-primary mb-3" style="width: 18rem;">
 						<div class="card-body">
 							<p class="text-center"><img src="https://via.placeholder.com/150" height="150px" width="150px"  alt=""></p>

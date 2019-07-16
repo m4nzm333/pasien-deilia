@@ -83,7 +83,7 @@
 					<div class="card">
 						<div class="card-body">
 							<h1>Tabel Pasien</h1>
-							<table class="table table-striped table-bordered dt-responsive nowrap" id="tabelPasien">
+							<table class="table table-striped table-bordered table-responsive nowrap" id="tabelPasien">
 							  <thead>
 							    <tr>
 							      <th scope="col">No.</th>
@@ -210,9 +210,7 @@
 		<script type="text/javascript">
 			var base_url = '<?php echo base_url(); ?>';
 			var counterDT = 0;
-			$('#tabelPasien').DataTable({
-				responsive: true
-			});
+			$('#tabelPasien').DataTable();
 
 			function edit_pasien(id) {
 				console.log('Edit Pasien ' + id);

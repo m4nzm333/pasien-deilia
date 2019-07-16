@@ -39,6 +39,27 @@ class PerawatanModel extends CI_Model {
     return $data['total'];
   }
 
+  public function get_count_perawatan_where($tahun = null, $bulan = null)
+  {
+    $this->db->select('id_perawatan, nama, diagnosa, terapi, biaya, tanggal, alamat, substr(tanggal, 1, 4) as tahun, substr(tanggal, 6, 2) as bulan, biaya');
+    if ($tahun != null) {
+      $this->db->where('tahun', $tahun);
+    }
+    if ($bulan != null) {
+      $this->db->where('bulan', $bulan);
+    }
+    $this->db->join('pasien', 'perawatan.id_pasien = pasien.id_pasien', 'left');
+    return $this->db->get('perawatan')->result_array();
+  }
+  public function get_count_perawatan_by_bulan()
+  {
+    $this->db->select('(substr(tanggal, 1, 4)) || "-" ||(substr(tanggal, 6, 2)) as bulan, sum(biaya) as total');
+    $this->db->group_by('tahun, bulan');
+    $this->db->order_by('tahun', 'ASC');
+    $this->db->order_by('bulan', 'ASC');
+    return $this->db->get('perawatan')->result_array();
+  }
+
   public function get_now()
   {
     date_default_timezone_set('Asia/Makassar');

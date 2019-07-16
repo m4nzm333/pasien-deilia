@@ -156,4 +156,36 @@ class Admin extends CI_Controller {
 		}
 		redirect('admin/pasien/'.$id_pasien.'/detail');
 	}
+
+	// PELAPORAN
+	public function pelaporan()
+	{
+
+		$this->load->view('pelaporan');
+	}
+	public function get_laporan()
+	{
+		$this->load->model('PerawatanModel');
+		$tahun = $this->input->post('tahun');
+		$bulan = $this->input->post('bulan');
+		// echo json_encode($this->input->post());
+		if ($tahun == 'all') {
+			$data['data'] = $this->PerawatanModel->get_count_perawatan_where();
+		} else {
+			if($bulan == 'all'){
+				$data['data'] = $this->PerawatanModel->get_count_perawatan_where($tahun);
+			} else {
+				$data['data'] = $this->PerawatanModel->get_count_perawatan_where($tahun, $bulan);
+			}
+		}
+		//
+		// $data['data'] = $this->PerawatanModel->get_count_perawatan_where();
+		echo json_encode($data);
+	}
+	public function get_laporan_grafik()
+	{
+		$this->load->model('PerawatanModel');
+		$data['data'] = $this->PerawatanModel->get_count_perawatan_by_bulan();
+		echo json_encode($data);
+	}
 }

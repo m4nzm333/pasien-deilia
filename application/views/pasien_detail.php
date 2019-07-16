@@ -143,7 +143,7 @@
 							<div class="card">
 								<div class="card-body">
 									<h2>Tabel Perawatan Pasien</h2>
-									<table class="table table-striped table-bordered dt-responsive nowrap" id="tabelPerawatan">
+									<table class="table table-striped table-bordered table-responsive nowrap" id="tabelPerawatan">
 									  <thead>
 									    <tr>
 									      <th scope="col">No.</th>
