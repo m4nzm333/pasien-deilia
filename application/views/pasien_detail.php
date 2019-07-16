@@ -101,10 +101,26 @@
 										</div>
 										<div class="row">
 											<div class="col-sm-6 col-md-4 col-lg-2">
+												Jenis Kelamin
+											</div>
+											<div class="col-sm-6 col-md-8 col-lg-10">
+												<strong><?php echo $pasien['jenis_kelamin']; ?></strong>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-4 col-lg-2">
 												Alamat
 											</div>
 											<div class="col-sm-6 col-md-8 col-lg-10">
 												<strong><?php echo $pasien['alamat']; ?></strong>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-4 col-lg-2">
+												Pekerjaan
+											</div>
+											<div class="col-sm-6 col-md-8 col-lg-10">
+												<strong><?php echo $pasien['pekerjaan']; ?></strong>
 											</div>
 										</div>
 										<div class="row">

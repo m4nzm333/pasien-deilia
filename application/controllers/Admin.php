@@ -35,6 +35,8 @@ class Admin extends CI_Controller {
 		$data['nama'] = $this->input->post('inputNamaPasien');
 		$data['umur'] = $this->input->post('inputUmur');
 		$data['tanggal_lahir'] = $this->input->post('inputTanggalLahir');
+		$data['jenis_kelamin'] = $this->input->post('inputJenisKelamin');
+		$data['pekerjaan'] = $this->input->post('inputPekerjaan');
 		$data['alamat'] = $this->input->post('inputAlamat');
 		$data['no_hp'] = $this->input->post('inputHP');
 		$data['riwayat_alergi'] = $this->input->post('inputRiwayatAlergi');
@@ -56,6 +58,8 @@ class Admin extends CI_Controller {
 		$data['umur'] = $this->input->post('inputUmurEdit');
 		$data['tanggal_lahir'] = $this->input->post('inputTanggalLahirEdit');
 		$data['alamat'] = $this->input->post('inputAlamatEdit');
+		$data['jenis_kelamin'] = $this->input->post('inputJenisKelaminEdit');
+		$data['pekerjaan'] = $this->input->post('inputPekerjaanEdit');
 		$data['no_hp'] = $this->input->post('inputHPEdit');
 		$data['riwayat_alergi'] = $this->input->post('inputRiwayatAlergiEdit');
 		$date = date_create_from_format( 'd/m/Y' ,$data['tanggal_lahir']);

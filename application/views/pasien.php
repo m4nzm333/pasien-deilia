@@ -55,6 +55,17 @@
 								    <input type="text" class="form-control" name="inputTanggalLahir" id="inputTanggalLahir" placeholder="Tanggal Lahir" required>
 								  </div>
 									<div class="form-group col-md-12">
+								    <label for="inputJenisKelamin">Jenis Kelamin</label>
+										<select class="form-control" name="inputJenisKelamin" id="inputJenisKelamin" >
+											<option value="Laki-laki">Laki-laki</option>
+											<option value="Perempuan">Perempuan</option>
+										</select>
+								  </div>
+									<div class="form-group col-md-12">
+								    <label for="inputPekerjaan">Pekerjaan</label>
+								    <input type="text" class="form-control" name="inputPekerjaan" id="inputPekerjaan" placeholder="Pekerjaan" required>
+								  </div>
+									<div class="form-group col-md-12">
 								    <label for="inputAlamat">Alamat</label>
 								    <input type="text" class="form-control" name="inputAlamat" id="inputAlamat" placeholder="Alamat" required>
 								  </div>
@@ -146,6 +157,13 @@
 										<input type="text" class="form-control" name="inputNamaEdit" id="inputNamaEdit" placeholder="Nama Pasien" required>
 									</div>
 									<div class="form-group col-md-12">
+								    <label for="inputJenisKelaminEdit">Jenis Kelamin</label>
+										<select class="form-control" name="inputJenisKelaminEdit" id="inputJenisKelaminEdit" >
+											<option value="Laki-laki">Laki-laki</option>
+											<option value="Perempuan">Perempuan</option>
+										</select>
+								  </div>
+									<div class="form-group col-md-12">
 										<label for="inputUmurEdit">Umur</label>
 										<input type="text" class="form-control" name="inputUmurEdit" id="inputUmurEdit" placeholder="Nama Pasien" required>
 									</div>
@@ -153,6 +171,10 @@
 										<label for="inputTanggalLahirEdit">Tanggal Lahir</label>
 										<input type="text" class="form-control" name="inputTanggalLahirEdit" id="inputTanggalLahirEdit" placeholder="Nama Pasien" required>
 									</div>
+									<div class="form-group col-md-12">
+								    <label for="inputPekerjaanEdit">Pekerjaan</label>
+								    <input type="text" class="form-control" name="inputPekerjaanEdit" id="inputPekerjaanEdit" placeholder="Pekerjaan" required>
+								  </div>
 									<div class="form-group col-md-12">
 										<label for="inputAlamatEdit">Alamat</label>
 										<input type="text" class="form-control" name="inputAlamatEdit" id="inputAlamatEdit" placeholder="Nama Pasien" required>
@@ -229,6 +251,13 @@
 						$('#inputUmurEdit').val(data.umur);
 						$('#inputHPEdit').val(data.no_hp);
 						$('#inputAlamatEdit').val(data.alamat);
+						if(data.jenis_kelamin == 'Laki-laki'){
+							$('#inputJenisKelaminEdit[value=Laki-laki]').attr('selected','selected');
+						}
+						if(data.jenis_kelamin == 'Perempuan'){
+							$('#inputJenisKelaminEdit[value=Perempuan]').attr('selected','selected');
+						}
+						$('#inputPekerjaanEdit').val(data.pekerjaan);
 						$('#inputRiwayatAlergiEdit').val(data.riwayat_alergi);
 						$('#formEditPasien').attr('action', base_url + 'admin/pasien/edit/' + id);
 						$('#modalEditPasien').modal('show');
