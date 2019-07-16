@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2019 at 05:28 AM
+-- Generation Time: Jul 15, 2019 at 08:38 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -35,6 +35,7 @@ CREATE TABLE `pasien` (
   `tanggal_lahir` date NOT NULL,
   `alamat` text NOT NULL,
   `no_hp` varchar(20) NOT NULL,
+  `riwayat_alergi` text NOT NULL,
   `created_on` datetime NOT NULL,
   `last_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -43,9 +44,8 @@ CREATE TABLE `pasien` (
 -- Dumping data for table `pasien`
 --
 
-INSERT INTO `pasien` (`id_pasien`, `nama`, `umur`, `tanggal_lahir`, `alamat`, `no_hp`, `created_on`, `last_update`) VALUES
-(1, '123', 123, '2019-12-07', '123', '123', '2019-07-13 10:48:46', '2019-07-13 02:48:46'),
-(2, 'Irman Mashuri', 21, '1998-01-01', 'Jl. Agus', '085396397688', '2019-07-13 11:25:43', '2019-07-13 03:25:43');
+INSERT INTO `pasien` (`id_pasien`, `nama`, `umur`, `tanggal_lahir`, `alamat`, `no_hp`, `riwayat_alergi`, `created_on`, `last_update`) VALUES
+(15, 'Pasien1', 18, '2019-07-16', 'Lanca', '123456', '12', '2019-07-16 01:19:43', '2019-07-15 17:35:17');
 
 -- --------------------------------------------------------
 
@@ -60,6 +60,7 @@ CREATE TABLE `perawatan` (
   `biaya` bigint(20) NOT NULL,
   `keterangan` text NOT NULL,
   `id_pasien` varchar(10) NOT NULL,
+  `tanggal` date NOT NULL,
   `created_on` datetime NOT NULL,
   `last_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -95,6 +96,12 @@ ALTER TABLE `pasien`
   ADD PRIMARY KEY (`id_pasien`);
 
 --
+-- Indexes for table `perawatan`
+--
+ALTER TABLE `perawatan`
+  ADD PRIMARY KEY (`id_perawatan`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -108,7 +115,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `perawatan`
+--
+ALTER TABLE `perawatan`
+  MODIFY `id_perawatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
