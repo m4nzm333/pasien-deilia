@@ -6,18 +6,21 @@
     <div class="navbar-nav">
 
       <a class="btn btn-primary nav-item nav-link text-light" href="<?php echo base_url(); ?>admin">
-				<img src="<?php echo base_url(); ?>asset/img/transaction.png" height="50px" width="50px"  alt="">
-					Home
+        <i class="fa fa-home fa-3x"></i>
+        <br>
+				Home
 			</a>
 			&nbsp
 			<a class="btn btn-primary nav-item nav-link text-light" href="<?php echo base_url(); ?>admin/pasien">
-				<img src="<?php echo base_url(); ?>asset/img/cd.png" height="50px" width="50px" alt="">
-					Pasien
+				<i class="fa fa-user fa-3x"></i>
+        <br>
+				Pasien
 			</a>
       &nbsp
       <a class="btn btn-primary nav-item nav-link text-light" href="<?php echo base_url(); ?>admin/pelaporan">
-				<img src="<?php echo base_url(); ?>asset/img/cd.png" height="50px" width="50px" alt="">
-					Rekapitulasi
+        <i class="fa fa-book fa-3x"></i>
+        <br>
+				Laporan
 			</a>
     </div>
 

@@ -100,8 +100,10 @@
 							      <th scope="col">No.</th>
 							      <th scope="col">Nama</th>
 										<th scope="col">Umur</th>
+										<th scope="col">Jenis Kelamin</th>
 										<th scope="col">Tanggal Lahir</th>
 										<th scope="col">Alamat</th>
+										<th scope="col">Pekerjaan</th>
 										<th scope="col">Nomor HP</th>
 										<th scope="col">Action</th>
 							    </tr>
@@ -112,8 +114,10 @@
 											<td><?php echo $i++; ?></td>
 											<td><?php echo $row['nama']; ?></td>
 											<td><?php echo $row['umur']; ?></td>
+											<td><?php echo $row['jenis_kelamin']; ?></td>
 											<td><?php echo $row['tanggal_lahir']; ?></td>
 											<td><?php echo $row['alamat']; ?></td>
+											<td><?php echo $row['pekerjaan']; ?></td>
 											<td><?php echo $row['no_hp']; ?></td>
 											<td>
 												<a href="<?php echo base_url(); ?>admin/pasien/<?php echo $row['id_pasien']; ?>/detail" class="btn btn-success">
@@ -252,10 +256,10 @@
 						$('#inputHPEdit').val(data.no_hp);
 						$('#inputAlamatEdit').val(data.alamat);
 						if(data.jenis_kelamin == 'Laki-laki'){
-							$('#inputJenisKelaminEdit[value=Laki-laki]').attr('selected','selected');
+							$('#inputJenisKelaminEdit option[value=Laki-laki]').attr('selected','selected');
 						}
 						if(data.jenis_kelamin == 'Perempuan'){
-							$('#inputJenisKelaminEdit[value=Perempuan]').attr('selected','selected');
+							$('#inputJenisKelaminEdit option[value=Perempuan]').attr('selected','selected');
 						}
 						$('#inputPekerjaanEdit').val(data.pekerjaan);
 						$('#inputRiwayatAlergiEdit').val(data.riwayat_alergi);
