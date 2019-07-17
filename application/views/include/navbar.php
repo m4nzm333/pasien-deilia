@@ -1,29 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light" style="background : #bf5f82; border-color : #bf5f82">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
 
-      <a class="btn btn-primary nav-item nav-link text-light" href="<?php echo base_url(); ?>admin">
+      <a class="btn btn-primary nav-item nav-link text-light" href="<?php echo base_url(); ?>admin" style="background : #b4004e; border-color : #b4004e">
         <i class="fa fa-home fa-3x"></i>
         <br>
 				Home
 			</a>
 			&nbsp
-			<a class="btn btn-primary nav-item nav-link text-light" href="<?php echo base_url(); ?>admin/pasien">
+			<a class="btn btn-primary nav-item nav-link text-light" href="<?php echo base_url(); ?>admin/pasien" style="background : #b4004e; border-color : #b4004e">
 				<i class="fa fa-user fa-3x"></i>
         <br>
 				Pasien
 			</a>
       &nbsp
-      <a class="btn btn-primary nav-item nav-link text-light" href="<?php echo base_url(); ?>admin/pelaporan">
+      <a class="btn btn-primary nav-item nav-link text-light" href="<?php echo base_url(); ?>admin/pelaporan" style="background : #b4004e; border-color : #b4004e">
         <i class="fa fa-book fa-3x"></i>
         <br>
 				Laporan
 			</a>
       &nbsp
-      <a class="btn btn-primary nav-item nav-link text-light" onclick="gantiPassword()">
+      <a class="btn btn-primary nav-item nav-link text-light" onclick="gantiPassword()" style="background : #b4004e; border-color : #b4004e">
         <i class="fa fa-gear fa-3x"></i>
         <br>
 				Ganti Password

@@ -8,10 +8,10 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/costum/css/login.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class="bg-dark" style="min-height:100%">
+<body style="background : #f06292;" style="min-height:100%">
 	<div class="container-fluid">
 		<br>
-		<a href="<?php echo base_url(); ?>login/keluar" class="btn btn-primary btn-lg">
+		<a href="<?php echo base_url(); ?>login/keluar" class="btn btn-primary btn-lg" style="background : #b4004e; border-color : #b4004e">
 			<i class="fa fa-sign-out"></i>
 			Kembali
 		</a>
@@ -34,7 +34,7 @@
 			<div class="d-none d-md-block d-sm-none col-md-4">
 			</div>
 			<div class="col-6 col-xs-6 col-sm-6 col-md-2">
-				<div class="card text-white bg-primary">
+				<div class="card text-white" style="background : #b4004e; border-color : #b4004e">
 					<a href="<?php echo base_url(); ?>admin/pasien">
 						<div class="card-body text-light text-center">
 							<i class="fa fa-user fa-5x"></i>
@@ -44,7 +44,7 @@
 				</div>
 			</div>
 			<div class="col-6 col-xs-6 col-sm-6 col-md-2">
-				<div class="card text-white bg-primary">
+				<div class="card text-white" style="background : #b4004e; border-color : #b4004e">
 					<a href="<?php echo base_url(); ?>admin/pelaporan">
 						<div class="card-body text-light text-center">
 							<i class="fa fa-book fa-5x"></i>
@@ -66,7 +66,7 @@
 			<div class="d-none d-md-block d-sm-none col-md-3">
 			</div>
 			<div class="col-12 col-xs-12 col-sm-6 col-md-3">
-				<div class="card">
+				<div class="card text-light" style="background : #b4004e; border-color : #b4004e">
 		      <div class="card-body">
 						<div class="container-fluid">
 							<i class="fa fa-plus fa-5x"></i>
@@ -77,7 +77,7 @@
 		    </div>
 			</div>
 			<div class="col-12 col-xs-12 col-sm-6 col-md-3">
-		    <div class="card">
+		    <div class="card text-light" style="background : #b4004e; border-color : #b4004e">
 		      <div class="card-body">
 						<div class="container-fluid">
 							<i class="fa fa-dollar fa-5x"></i>

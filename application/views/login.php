@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="<?php base_url(); ?>asset/costum/css/login.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class="bg-dark">
+<body style="background : #f06292;">
 	<div class="wrapper fadeInDown">
 		<?php $this->load->view('include/notification') ?>
 	  <div id="formContent">

@@ -25,7 +25,7 @@
 	      }
 	    </style>
   	</head>
-	<body class="d-flex flex-column h-100 bg-light">
+	<body class="d-flex flex-column h-100" style="background : #ffc1e3; border-color : #ffc1e3">
 
 		<?php $this->load->view('include/navbar'); ?>
 

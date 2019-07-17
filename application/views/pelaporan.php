@@ -13,10 +13,10 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/costum/css/login.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class="bg-dark" style="position: relative; height: auto; min-height: 100% !important;">
+<body style="position: relative; height: auto; min-height: 100% !important; background : #f06292;">
 	<div class="container-fluid">
 		<br>
-		<a href="<?php echo base_url(); ?>admin" class="btn btn-primary btn-lg">
+		<a href="<?php echo base_url(); ?>admin" class="btn btn-primary btn-lg" style="background : #b4004e; border-color : #b4004e">
 			<i class="fa fa-sign-out"></i>
 			Kembali
 		</a>
