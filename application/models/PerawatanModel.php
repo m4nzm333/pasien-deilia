@@ -51,6 +51,13 @@ class PerawatanModel extends CI_Model {
     $this->db->join('pasien', 'perawatan.id_pasien = pasien.id_pasien', 'left');
     return $this->db->get('perawatan')->result_array();
   }
+  public function get_count_perawatan_by_id_pasien($id_pasien)
+  {
+    $this->db->select('sum(biaya) as total');
+    $this->db->where('id_pasien', $id_pasien);
+    $data =  $this->db->get('perawatan')->row_array();
+    return $data['total'];
+  }
   public function get_count_perawatan_by_bulan()
   {
     $this->db->select('(substr(tanggal, 1, 4)) || "-" ||(substr(tanggal, 6, 2)) as bulan, sum(biaya) as total');

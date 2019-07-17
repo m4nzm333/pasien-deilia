@@ -120,7 +120,11 @@
 											<td><?php echo $row['pekerjaan']; ?></td>
 											<td><?php echo $row['no_hp']; ?></td>
 											<td>
-												<a href="<?php echo base_url(); ?>admin/pasien/<?php echo $row['id_pasien']; ?>/detail" class="btn btn-success">
+												<a href="javascript:printPasien(<?php echo $row['id_pasien']; ?>)" class="btn btn-success">
+													<i class="fa fa-print"></i>
+													Cetak
+												</a>
+												<a href="<?php echo base_url(); ?>admin/pasien/<?php echo $row['id_pasien']; ?>/detail" class="btn btn-info">
 													<i class="fa fa-list"></i>
 													Detail
 												</a>
@@ -297,6 +301,18 @@
 	    });
 			function gantiPassword() {
 				$("#modalGantiPassword").modal('show');
+			}
+
+			function printPasien(id) {
+				url = base_url + 'admin/pasien/' + id + '/cetak';
+				printExternal(url);
+			}
+			function printExternal(url) {
+				var printWindow = window.open( url, 'Print', 'left=200, top=200, width=950, height=500, toolbar=0, resizable=0');
+				printWindow.addEventListener('load', function(){
+						printWindow.print();
+						printWindow.close();
+				}, true);
 			}
 		</script>
 

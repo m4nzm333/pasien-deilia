@@ -102,7 +102,17 @@ class Admin extends CI_Controller {
 		$this->load->model('PerawatanModel');
 		$data['pasien'] = $this->PasienModel->get_pasien_by_id($id_pasien);
 		$data['pasien']['perawatan'] = $this->PerawatanModel->get_perawatan_by_id_pasien($id_pasien);
+		$data['pasien']['total_biaya'] = $this->PerawatanModel->get_count_perawatan_by_id_pasien($id_pasien);
 		$this->load->view('pasien_detail', $data);
+	}
+	public function pasien_cetak($id_pasien)
+	{
+		$this->load->model('PasienModel');
+		$this->load->model('PerawatanModel');
+		$data['pasien'] = $this->PasienModel->get_pasien_by_id($id_pasien);
+		$data['pasien']['perawatan'] = $this->PerawatanModel->get_perawatan_by_id_pasien($id_pasien);
+		$data['pasien']['total_biaya'] = $this->PerawatanModel->get_count_perawatan_by_id_pasien($id_pasien);
+		$this->load->view('pasien_cetak', $data);
 	}
 	public function perawatan_tambah($id_pasien)
 	{

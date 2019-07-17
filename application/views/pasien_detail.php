@@ -96,7 +96,11 @@
 												Umur / Tanggal Lahir
 											</div>
 											<div class="col-sm-6 col-md-8 col-lg-10">
-												<strong><?php echo $pasien['umur'].' tahun / '.$pasien['tanggal_lahir']; ?></strong>
+												<strong><?php
+												echo $pasien['umur'].' tahun / ';
+												$date = date_create_from_format( 'Y-m-d' ,$pasien['tanggal_lahir']);
+												setlocale(LC_TIME, "id");
+												echo strftime("%e %B %Y", $date->getTimestamp()); ?></strong>
 											</div>
 										</div>
 										<div class="row">
@@ -139,15 +143,23 @@
 												<strong><?php echo $pasien['riwayat_alergi']; ?></strong>
 											</div>
 										</div>
-										<!-- <hr>
+										<div class="row">
+											<div class="col-sm-6 col-md-4 col-lg-2">
+												Total Biaya
+											</div>
+											<div class="col-sm-6 col-md-8 col-lg-5">
+												<strong>Rp. <?php echo number_format($pasien['total_biaya'], 2, ',', '.'); ?>,-</strong>
+											</div>
+										</div>
+										<hr>
 										<div class="row">
 											<div class="col-md-12">
-												<button type="button" name="button" class="btn btn-success">
+												<button type="button" name="button" class="btn btn-success btn-lg" onclick="printPasien(<?php echo $pasien['id_pasien']; ?>)">
 													<i class="fa fa-print"></i>
-													Print
+													Cetak
 												</button>
 											</div>
-										</div> -->
+										</div>
 									</div>
 								</div>
 							</div>
@@ -327,6 +339,18 @@
 
 			function gantiPassword() {
 				$("#modalGantiPassword").modal('show');
+			}
+
+			function printPasien(id) {
+				url = base_url + 'admin/pasien/' + id + '/cetak';
+				printExternal(url);
+			}
+			function printExternal(url) {
+				var printWindow = window.open( url, 'Print', 'left=200, top=200, width=950, height=500, toolbar=0, resizable=0');
+				printWindow.addEventListener('load', function(){
+						printWindow.print();
+						printWindow.close();
+				}, true);
 			}
 		</script>
 
