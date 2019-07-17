@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/costum/css/login.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class="bg-dark">
+<body class="bg-dark" style="position: relative; height: auto; min-height: 100% !important;">
 	<div class="container-fluid">
 		<br>
 		<a href="<?php echo base_url(); ?>admin" class="btn btn-primary btn-lg">
