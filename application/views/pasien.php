@@ -295,6 +295,9 @@
 				dateFormat: 'dd/mm/yy',
 				yearRange: '1940:' + new Date().getFullYear()
 	    });
+			function gantiPassword() {
+				$("#modalGantiPassword").modal('show');
+			}
 		</script>
 
 	</body>

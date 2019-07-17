@@ -22,8 +22,45 @@
         <br>
 				Laporan
 			</a>
-    </div>
+      &nbsp
+      <a class="btn btn-primary nav-item nav-link text-light" onclick="gantiPassword()">
+        <i class="fa fa-gear fa-3x"></i>
+        <br>
+				Ganti Password
+			</a>
 
+      <div class="modal fade" id="modalGantiPassword" tabindex="-1" role="dialog" aria-labelledby="modalGantiPasswordLabel" aria-hidden="true">
+  		  <div class="modal-dialog" role="document">
+          <form method="post" action="<?php echo base_url(); ?>admin/gantipass" id="modalGantiPasswordLabel">
+  			    <div class="modal-content">
+  			      <div class="modal-header">
+  			        <h5 class="modal-title" id="modalEditPasienLabel">Ganti Password</h5>
+  			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  			          <span aria-hidden="true">&times;</span>
+  			        </button>
+  			      </div>
+  			      <div class="modal-body">
+  							<div class="container-fluid">
+									<div class="form-group col-md-12">
+										<label for="inputPassLama">Password Lama</label>
+										<input type="password" class="form-control" name="inputPassLama" id="inputPassLama" placeholder="Password Lama" required>
+									</div>
+                  <div class="form-group col-md-12">
+										<label for="inputPassBaru">Password Baru</label>
+										<input type="password" class="form-control" name="inputPassBaru" id="inputPassBaru" placeholder="Password Baru" required>
+									</div>
+  							</div>
+  			      </div>
+  			      <div class="modal-footer">
+  			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  			        <button type="submit" class="btn btn-primary">Simpan</button>
+  			      </div>
+  			    </div>
+  				</form>
+  		  </div>
+  		</div>
+
+    </div>
   </div>
 	<div class="my-2 my-sm-0">
 		<img src="<?php echo base_url(); ?>asset/img/icon.png" alt="" height="50px" width="50px">

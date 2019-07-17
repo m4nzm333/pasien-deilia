@@ -36,9 +36,9 @@
 			<div class="col-6 col-xs-6 col-sm-6 col-md-2">
 				<div class="card text-white bg-primary">
 					<a href="<?php echo base_url(); ?>admin/pasien">
-						<div class="card-body">
-							<p class="text-center"><img src="https://via.placeholder.com/150" height="100px" width="100px"  alt=""></p>
-							<h4 class="card-title text-center">Pasien</h4>
+						<div class="card-body text-light text-center">
+							<i class="fa fa-user fa-5x"></i>
+							<h4 class="card-title">Pasien</h4>
 						</div>
 					</a>
 				</div>
@@ -46,9 +46,9 @@
 			<div class="col-6 col-xs-6 col-sm-6 col-md-2">
 				<div class="card text-white bg-primary">
 					<a href="<?php echo base_url(); ?>admin/pelaporan">
-						<div class="card-body">
-							<p class="text-center"><img src="https://via.placeholder.com/150" height="100px" width="100px"  alt=""></p>
-							<h4 class="card-title text-center">Pelaporan</h4>
+						<div class="card-body text-light text-center">
+							<i class="fa fa-book fa-5x"></i>
+							<h4 class="card-title">Laporan</h4>
 						</div>
 					</a>
 				</div>
@@ -71,7 +71,7 @@
 						<div class="container-fluid">
 							<i class="fa fa-plus fa-5x"></i>
 							<h5 class="card-title">Jumlah Pasien</h5>
-							<h4><?php echo $sum_pasien; ?> Orang</h4>
+							<h3><?php echo $sum_pasien; ?> Orang</h3>
 						</div>
 		      </div>
 		    </div>
@@ -82,7 +82,7 @@
 						<div class="container-fluid">
 							<i class="fa fa-dollar fa-5x"></i>
 							<h5 class="card-title">Jumlah Pemasukan</h5>
-							<h4>Rp. <?php echo number_format($sum_perawatan, 0, ',', '.'); ?>,-</h4>
+							<h3>Rp. <?php echo number_format($sum_perawatan, 0, ',', '.'); ?>,-</h3>
 						</div>
 		      </div>
 		    </div>

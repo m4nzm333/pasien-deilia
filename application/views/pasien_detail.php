@@ -324,6 +324,10 @@
 				$('#btnModalHapus').attr('href', base_url + 'admin/pasien/'+id_pasien+'/perawatan/'+ id + '/hapus');
 				$('#modalHapusPerawatan').modal('show');
 			}
+
+			function gantiPassword() {
+				$("#modalGantiPassword").modal('show');
+			}
 		</script>
 
 	</body>

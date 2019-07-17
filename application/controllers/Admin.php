@@ -192,4 +192,25 @@ class Admin extends CI_Controller {
 		$data['data'] = $this->PerawatanModel->get_count_perawatan_by_bulan();
 		echo json_encode($data);
 	}
+
+	// GANTI PASSWORD
+	public function gantipass()
+	{
+		$this->load->model('UserModel');
+		$username = $this->session->userdata('username');
+		$passwordLama = md5($this->input->post('inputPassLama'));
+		if($this->UserModel->auth_user_login($username, $passwordLama) == true){
+			$data['password'] = md5($this->input->post('inputPassBaru'));
+			if($this->UserModel->update_user_by_username($data, $username)){
+				$this->session->set_flashdata('warning', 'Password telah diubah.');
+				redirect('admin/pasien');
+			} else {
+				$this->session->set_flashdata('error', 'Password tidak dapat diubah.');
+				redirect('admin/pasien');
+			}
+		} else {
+			$this->session->set_flashdata('error', 'Password lama salah.');
+			redirect('admin/pasien');
+		}
+	}
 }
