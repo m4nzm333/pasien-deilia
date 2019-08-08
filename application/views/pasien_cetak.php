@@ -95,10 +95,10 @@
             <thead>
               <tr class="text-center">
                 <th scope="col" width="40px">No.</th>
-                <th scope="col">Tanggal</th>
+                <th scope="col" width="100px">Tanggal</th>
                 <th scope="col">Diagnosa</th>
                 <th scope="col">Terapi</th>
-                <th scope="col">Biaya</th>
+                <th scope="col" width="200px">Biaya</th>
                 <th scope="col">Keterangan</th>
               </tr>
             </thead>
