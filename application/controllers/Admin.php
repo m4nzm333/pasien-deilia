@@ -223,5 +223,5 @@ class Admin extends CI_Controller {
 			redirect('admin/pasien');
 		}
 	}
-	
+
 }

@@ -179,11 +179,12 @@
 			method : 'POST',
 			success : function (respond) {
 				data = JSON.parse(respond);
+				data = data.data;
 				var genData = [];
 				var genData2 = [];
 				var endDate = new Date();
 				var date = new Date((endDate.getFullYear() - 1).toString());
-				var monthNameList = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+				var monthNameList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 				while (date <= endDate)
 				{
 			    var stringDate = date.getFullYear() + "-" + monthNameList[date.getMonth()] ;
@@ -191,13 +192,13 @@
 			    date.setMonth(date.getMonth() + 1);
 				}
 				genData.forEach(function(row1) {
-					data.data.forEach(function(row2) {
-						if(row2.bulan == row1.bulan){
-							row1 = row2;
+					data.forEach(function(row2) {
+						if(row2.tahun+'-'+row2.bulan == row1.bulan){
+							row1.total = row2.total
 						}
 					})
 					genData2.push(row1);
-				});
+				})
 				console.log(genData2);
 
 				new Morris.Line({

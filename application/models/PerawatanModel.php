@@ -132,7 +132,7 @@ class PerawatanModel extends CI_Model {
   }
   public function get_count_perawatan_by_bulan()
   {
-    $this->db->select('YEAR(TANGGAL) as tahun,YEAR(tanggal) || "-" || MONTH(tanggal) as bulan, sum(biaya) as total');
+    $this->db->select('YEAR(tanggal) as tahun, MONTH(tanggal) as bulan, sum(biaya) as total');
     $this->db->group_by('tahun, bulan');
     $this->db->order_by('tahun', 'ASC');
     $this->db->order_by('bulan', 'ASC');

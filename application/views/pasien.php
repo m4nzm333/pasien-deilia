@@ -132,7 +132,7 @@
 								</div>
 								<div class="form-group col-md-12">
 									<label for="inputPekerjaan">Pekerjaan</label>
-									<input type="text" class="form-control" name="inputPekerjaan" id="inputPekerjaan" placeholder="Pekerjaan" required>
+									<input type="text" class="form-control" name="inputPekerjaan" id="inputPekerjaan" placeholder="Pekerjaan">
 								</div>
 								<div class="form-group col-md-12">
 									<label for="inputAlamat">Alamat</label>
@@ -140,7 +140,7 @@
 								</div>
 								<div class="form-group col-md-12">
 									<label for="inputHP">Nomor Hp</label>
-									<input type="text" class="form-control" name="inputHP" id="inputHP" placeholder="Nomor HP" required>
+									<input type="text" class="form-control" name="inputHP" id="inputHP" placeholder="Nomor HP">
 								</div>
 								<div class="form-group col-md-12">
 									<label for="inputRiwayatAlergi">Riwayat Alergi </label>

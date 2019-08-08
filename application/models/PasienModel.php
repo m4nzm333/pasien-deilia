@@ -52,6 +52,7 @@ class PasienModel extends CI_Model {
   }
   public function get_pasien_all()
   {
+    $this->db->order_by('created_on', 'asc');
     return $this->db->get('pasien')->result_array();
   }
   public function get_pasien_by_id($id_pasien)
