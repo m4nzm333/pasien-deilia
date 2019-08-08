@@ -115,10 +115,10 @@ class PerawatanModel extends CI_Model {
   {
     $this->db->select('id_perawatan, nama, diagnosa, terapi, biaya, tanggal, alamat, YEAR(tanggal) as tahun, MONTH(tanggal) as bulan, biaya');
     if ($tahun != null) {
-      $this->db->where('tahun', $tahun);
+      $this->db->where('YEAR(tanggal)', $tahun);
     }
     if ($bulan != null) {
-      $this->db->where('bulan', $bulan);
+      $this->db->where('MONTH(tanggal)', $bulan);
     }
     $this->db->join('pasien', 'perawatan.id_pasien = pasien.id_pasien', 'left');
     return $this->db->get('perawatan')->result_array();

@@ -36,68 +36,19 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-sm-12 col-md-12 col-lg-12">
 					<div class="card">
 						<div class="card-body">
-							<div class="container-fluid">
-								<h2>Tambah Pasien</h2>
-								<form method="post" action="<?php echo base_url(); ?>admin/pasien/tambah">
-								  <div class="form-group col-md-12">
-								    <label for="inputNama">Nama</label>
-								    <input type="text" class="form-control" name="inputNamaPasien" id="inputNamaPasien" placeholder="Nama Pasien" required>
-								  </div>
-									<div class="form-group col-md-12">
-								    <label for="inputUmur">Umur</label>
-								    <input type="text" class="form-control" name="inputUmur" id="inputUmur" placeholder="Umur" required>
-								  </div>
-									<div class="form-group col-md-12">
-								    <label for="inputTanggalLahir">Tanggal Lahir</label>
-								    <input type="text" class="form-control" name="inputTanggalLahir" id="inputTanggalLahir" placeholder="Tanggal Lahir" required>
-								  </div>
-									<div class="form-group col-md-12">
-								    <label for="inputJenisKelamin">Jenis Kelamin</label>
-										<select class="form-control" name="inputJenisKelamin" id="inputJenisKelamin" >
-											<option value="Laki-laki">Laki-laki</option>
-											<option value="Perempuan">Perempuan</option>
-										</select>
-								  </div>
-									<div class="form-group col-md-12">
-								    <label for="inputPekerjaan">Pekerjaan</label>
-								    <input type="text" class="form-control" name="inputPekerjaan" id="inputPekerjaan" placeholder="Pekerjaan" required>
-								  </div>
-									<div class="form-group col-md-12">
-								    <label for="inputAlamat">Alamat</label>
-								    <input type="text" class="form-control" name="inputAlamat" id="inputAlamat" placeholder="Alamat" required>
-								  </div>
-									<div class="form-group col-md-12">
-								    <label for="inputHP">Nomor Hp</label>
-								    <input type="text" class="form-control" name="inputHP" id="inputHP" placeholder="Nomor HP" required>
-								  </div>
-									<div class="form-group col-md-12">
-								    <label for="inputRiwayatAlergi">Riwayat Alergi </label>
-										<textarea name="inputRiwayatAlergi" rows="5" cols="80" class="form-control" placeholder="Riwayat Alergi"></textarea>
-								  </div>
-									<div class="form-group col-md-12">
-										<button type="submit" name="button" class="btn btn-success btn-lg">
-											<i class="fa fa-plus"></i>
-											Tambah
-										</button>
-								  </div>
-								</form>
-
-							</div>
-
-						</div>
-					</div>
-				</div>
-				<div class="col-md-8">
-					<div class="card">
-						<div class="card-body">
-							<h1>Tabel Pasien</h1>
+							<h3>Tabel Pasien</h3>
+							<p class="text-left">
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambahPasien" data-backdrop="static">
+									<i class="fa fa-plus"></i> Tambah Pasien
+								</button>
+							</p>
 							<table class="table table-striped table-bordered table-responsive nowrap" id="tabelPasien">
 							  <thead>
 							    <tr>
-							      <th scope="col">No.</th>
+							      <th scope="col" width="20px">No.</th>
 							      <th scope="col">Nama</th>
 										<th scope="col">Umur</th>
 										<th scope="col">Jenis Kelamin</th>
@@ -146,6 +97,64 @@
 				</div>
 			</div>
 
+		</div>
+
+		<div class="modal fade" id="modalTambahPasien" tabindex="-1" role="dialog" aria-labelledby="modalTambahPasienLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+				<form method="post" action="<?php echo base_url(); ?>admin/pasien/tambah">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title">Tambah Pasien</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+							<div class="container-fluid">
+								<div class="form-group col-md-12">
+									<label for="inputNama">Nama</label>
+									<input type="text" class="form-control" name="inputNamaPasien" id="inputNamaPasien" placeholder="Nama Pasien" required>
+								</div>
+								<div class="form-group col-md-12">
+									<label for="inputUmur">Umur</label>
+									<input type="text" class="form-control" name="inputUmur" id="inputUmur" placeholder="Umur" required>
+								</div>
+								<div class="form-group col-md-12">
+									<label for="inputTanggalLahir">Tanggal Lahir</label>
+									<input type="text" class="form-control" name="inputTanggalLahir" id="inputTanggalLahir" placeholder="Tanggal Lahir" required>
+								</div>
+								<div class="form-group col-md-12">
+									<label for="inputJenisKelamin">Jenis Kelamin</label>
+									<select class="form-control" name="inputJenisKelamin" id="inputJenisKelamin" >
+										<option value="Laki-laki">Laki-laki</option>
+										<option value="Perempuan">Perempuan</option>
+									</select>
+								</div>
+								<div class="form-group col-md-12">
+									<label for="inputPekerjaan">Pekerjaan</label>
+									<input type="text" class="form-control" name="inputPekerjaan" id="inputPekerjaan" placeholder="Pekerjaan" required>
+								</div>
+								<div class="form-group col-md-12">
+									<label for="inputAlamat">Alamat</label>
+									<input type="text" class="form-control" name="inputAlamat" id="inputAlamat" placeholder="Alamat" required>
+								</div>
+								<div class="form-group col-md-12">
+									<label for="inputHP">Nomor Hp</label>
+									<input type="text" class="form-control" name="inputHP" id="inputHP" placeholder="Nomor HP" required>
+								</div>
+								<div class="form-group col-md-12">
+									<label for="inputRiwayatAlergi">Riwayat Alergi </label>
+									<textarea name="inputRiwayatAlergi" rows="5" cols="80" class="form-control" placeholder="Riwayat Alergi"></textarea>
+								</div>
+							</div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			        <button type="submit" class="btn btn-primary">Simpan</button>
+			      </div>
+			    </div>
+				</form>
+		  </div>
 		</div>
 
 		<div class="modal fade" id="modalEditPasien" tabindex="-1" role="dialog" aria-labelledby="modalEditPasienLabel" aria-hidden="true">

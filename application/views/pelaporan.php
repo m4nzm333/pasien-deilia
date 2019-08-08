@@ -33,58 +33,64 @@
 
 				<div class="card">
 					<div class="card-body">
-						<h4 class="text-center">Tabel Perawatan</h4>
-						<form>
-							<div class="form-group">
-								<label>Tahun</label>
-						    <select class="form-control" id="inputTahun">
-						      <option value="all">Semua Tahun</option>
-									<?php for($i = 2018; $i <= date("Y"); $i++){
-										echo '<option value="'.$i.'">'.$i.'</option>';
-									}?>
-						    </select>
-						  </div>
-							<div class="form-group">
-								<label>Bulan</label>
-						    <select class="form-control" id="inputBulan">
-									<option value="all">Semua Bulan</option>
-									<option value="01">Januari</option>
-									<option value="02">Februari</option>
-									<option value="03">Maret</option>
-									<option value="04">April</option>
-									<option value="05">Mei</option>
-									<option value="06">Juni</option>
-									<option value="07">Juli</option>
-									<option value="08">Agustus</option>
-									<option value="09">September</option>
-									<option value="10">Oktober</option>
-									<option value="11">November</option>
-									<option value="12">Desember</option>
-						    </select>
-						  </div>
-						  <div class="form-group">
-						    <button type="button" name="button" class="btn btn-primary" onclick="getData()">Tampilkan</button>
-						  </div>
-							<hr>
-							<table class="table table-striped table-bordered nowrap" id="tabelLaporan">
-							  <thead>
-									<tr>
-										<th scope="col">Pasien</th>
-										<th scope="col">Alamat</th>
-										<th scope="col">Tanggal</th>
-										<th scope="col">Diagnosa</th>
-										<th scope="col">Terapi</th>
-										<th scope="col">Biaya</th>
-									</tr>
-							  </thead>
-							  <tbody>
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<h4 class="text-center">Tabel Perawatan</h4>
+									<form>
+										<div class="form-group">
+											<label>Tahun</label>
+									    <select class="form-control" id="inputTahun">
+									      <option value="all">Semua Tahun</option>
+												<?php for($i = 2018; $i <= date("Y"); $i++){
+													echo '<option value="'.$i.'">'.$i.'</option>';
+												}?>
+									    </select>
+									  </div>
+										<div class="form-group">
+											<label>Bulan</label>
+									    <select class="form-control" id="inputBulan">
+												<option value="all">Semua Bulan</option>
+												<option value="01">Januari</option>
+												<option value="02">Februari</option>
+												<option value="03">Maret</option>
+												<option value="04">April</option>
+												<option value="05">Mei</option>
+												<option value="06">Juni</option>
+												<option value="07">Juli</option>
+												<option value="08">Agustus</option>
+												<option value="09">September</option>
+												<option value="10">Oktober</option>
+												<option value="11">November</option>
+												<option value="12">Desember</option>
+									    </select>
+									  </div>
+									  <div class="form-group">
+									    <button type="button" name="button" class="btn btn-primary" onclick="getData()">Tampilkan</button>
+									  </div>
+										<hr>
+										<table class="table table-hover table-striped" id="tabelLaporan">
+										  <thead>
+												<tr>
+													<th scope="col">Pasien</th>
+													<th scope="col">Alamat</th>
+													<th scope="col">Tanggal</th>
+													<th scope="col">Diagnosa</th>
+													<th scope="col">Terapi</th>
+													<th scope="col">Biaya</th>
+												</tr>
+										  </thead>
+										  <tbody>
 
-							  </tbody>
-							</table>
-							<hr>
-							<h4 class="text-center">Grafik Perawatan (1 Tahun Terakhir)</h4>
-							<div id="chartLaporan" style="height: 250px;"></div>
-						</form>
+										  </tbody>
+										</table>
+										<hr>
+										<h4 class="text-center">Grafik Perawatan (1 Tahun Terakhir)</h4>
+										<div id="chartLaporan" style="height: 250px;"></div>
+									</form>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
