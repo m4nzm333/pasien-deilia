@@ -2,6 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class PerawatanModel extends CI_Model {
+  function __construct() {
+      parent::__construct();
+      $this->db->query("SET sql_mode = '' ");
+  }
   // SQLite
   // public function insert_perawatan($data)
   // {
