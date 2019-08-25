@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 11, 2019 at 05:31 PM
+-- Generation Time: Aug 25, 2019 at 05:59 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.2
 
@@ -74,13 +74,13 @@ INSERT INTO `pasien` (`id_pasien`, `nama`, `jenis_kelamin`, `umur`, `tanggal_lah
 (35, 'Erni', 'Perempuan', '16', '2003-06-12', 'Siswa', 'Barejulat', NULL, 'Tidak ada', '2019-07-23 17:07:31', '2019-07-23 17:07:31'),
 (36, 'Baiq azkia', 'Perempuan', '30', '1989-11-15', 'Perawat', 'Praya', '081907581415', 'Tidak ada', '2019-07-23 17:07:57', '2019-07-23 17:07:57'),
 (37, 'Yuyun/Nurul', 'Perempuan', '24', '1995-05-03', 'Peg swasta', 'Batukliang utara', '081907284200', 'Tidak ada', '2019-07-23 17:07:07', '2019-07-23 17:07:07'),
-(38, 'eva apriliana', 'Perempuan', '20', '1999-01-01', 'peg swasta', 'barejulat', NULL, 'alergi kambing', '2019-07-24 17:07:04', '2019-07-24 17:07:04'),
+(38, 'eva apriliana', 'Perempuan', '20', '1999-04-04', 'peg swasta', 'barejulat', '00000000000', 'alergi kambing', '2019-07-24 17:07:04', '2019-08-22 11:55:47'),
 (42, 'khaerul gam', 'Laki-laki', '26', '1992-11-11', 'pns', 'btn tampar tampar', NULL, 'tidak ada', '2019-07-24 17:07:15', '2019-07-24 17:07:15'),
 (43, 'aven/sovia', 'Perempuan', '16', '2000-09-24', 'siswa', 'bunkate', '087761539302', 'tidak ada', '2019-07-24 17:07:51', '2019-07-24 17:07:51'),
 (44, 'titis', 'Perempuan', '20', '1999-07-08', 'mahasiswa', 'puyung', NULL, 'tidak ada', '2019-07-24 18:07:52', '2019-07-24 18:07:52'),
 (45, 'munawarah', 'Perempuan', '29', '1990-11-20', 'ibu rumah tangga', 'puyung', NULL, 'tidak ada', '2019-07-24 18:07:49', '2019-07-24 18:07:49'),
 (46, 'saadah', 'Perempuan', '48', '1971-12-31', 'pns', 'waker', NULL, 'tidak ada', '2019-07-25 09:07:43', '2019-07-25 09:07:43'),
-(47, 'baiq putri', 'Perempuan', '19', '2000-12-31', 'mahasiswa', 'marong', NULL, 'tidak ada', '2019-07-25 09:07:42', '2019-07-25 09:07:42'),
+(47, 'baiq putri', 'Perempuan', '19', '1999-07-28', 'mahasiswa', 'marong', '00000000000', 'tidak ada', '2019-07-25 09:07:42', '2019-08-13 08:47:24'),
 (48, 'surianingsih', 'Perempuan', '32', '1985-03-31', 'pns', 'pringgrata', NULL, 'tidak ada', '2019-07-25 09:07:42', '2019-07-25 09:07:42'),
 (49, 'gita', 'Perempuan', '15', '1992-03-15', 'siswa', 'bonjeruk', NULL, 'tidak ada', '2019-07-25 09:07:09', '2019-07-25 09:07:48'),
 (50, 'nurul sani', 'Perempuan', '16', '1992-03-15', 'siswa', 'bonjeruk', NULL, 'tidak ada', '2019-07-25 09:07:34', '2019-07-25 09:07:34'),
@@ -120,7 +120,28 @@ INSERT INTO `pasien` (`id_pasien`, `nama`, `jenis_kelamin`, `umur`, `tanggal_lah
 (84, 'annisa iswari', 'Perempuan', '19', '2000-04-23', 'mahasiswa', 'IPDN', NULL, 'tidak ada', '2019-08-06 18:08:15', '2019-08-06 18:08:15'),
 (85, 'lale sri ratna', 'Perempuan', '20', '1998-10-16', 'mahasiswa', 'sukarare', NULL, 'antalgin', '2019-08-06 19:08:56', '2019-08-06 19:08:56'),
 (86, 'tina', 'Perempuan', '32', '1987-11-14', 'bidan ', 'ubung', NULL, 'tidak ada', '2019-08-07 17:08:06', '2019-08-07 17:08:06'),
-(88, 'Tiwi', 'Perempuan', '28', '1993-02-28', '0', 'praya', NULL, 'tidak ada', '2019-08-07 18:08:46', '2019-08-07 18:08:46');
+(88, 'Tiwi', 'Perempuan', '28', '1993-02-28', '0', 'praya', NULL, 'tidak ada', '2019-08-07 18:08:46', '2019-08-07 18:08:46'),
+(90, 'ustazah yayik', 'Perempuan', '32', '1989-09-10', 'guru', 'praya', '0000000000', 'tidak ada', '2019-08-16 13:52:31', '2019-08-16 13:52:31'),
+(91, 'salwa', 'Perempuan', '5', '2014-05-01', 'siswa', 'puyung', '0000000000', 'tidak ada', '2019-08-20 10:11:48', '2019-08-20 10:11:48'),
+(92, 'fuji khaerani', 'Perempuan', '29', '1991-08-16', 'dosen bagu', 'mantang', '0000000000', 'tidak ada', '2019-08-22 11:47:52', '2019-08-22 11:47:52'),
+(93, 'penta', 'Perempuan', '23', '1996-05-18', 'wiraswasta', 'barejulat', '0000000000', 'tidak ada', '2019-08-22 11:51:22', '2019-08-22 11:51:22'),
+(94, 'balada', 'Perempuan', '24', '1992-03-15', 'apoteker', 'langko', '0000000000', 'tidak ada', '2019-08-22 11:58:44', '2019-08-22 11:58:44'),
+(95, 'rossi', 'Perempuan', '17', '2001-12-02', 'siswa', 'bunkate', '', '', '2019-08-24 11:30:34', '2019-08-24 11:30:34'),
+(96, 'rossi', 'Perempuan', '17', '2001-12-02', 'siswa', 'bunkate', '', '', '2019-08-24 11:30:35', '2019-08-24 11:30:35'),
+(97, 'rossi', 'Perempuan', '17', '2001-12-02', 'siswa', 'bunkate', '', '', '2019-08-24 11:30:36', '2019-08-24 11:30:36'),
+(98, 'hj.hariatun', 'Perempuan', '57', '1976-12-31', 'wiraswasta', 'narmada', '', '', '2019-08-24 11:37:30', '2019-08-24 11:37:30'),
+(99, 'hj.hariatun', 'Perempuan', '57', '1976-12-31', 'wiraswasta', 'narmada', '', '', '2019-08-24 11:37:30', '2019-08-24 11:37:30'),
+(100, 'ibu mariam', 'Perempuan', '44', '1962-12-31', 'wiraswasta', 'puyung', '', '', '2019-08-24 11:42:53', '2019-08-24 11:42:53'),
+(101, 'ibu rusida', 'Perempuan', '54', '1973-12-31', 'wiraswasta', 'puyung', '', '', '2019-08-24 11:45:36', '2019-08-24 11:45:36'),
+(102, 'ibu hariati', 'Perempuan', '32', '1985-12-31', 'ibu rumah tangga', 'puyung', '', '', '2019-08-24 11:47:45', '2019-08-24 11:47:45'),
+(103, 'rossiana', 'Perempuan', '49', '1968-12-31', 'ibu rumah tangga', 'praya', '', '', '2019-08-24 11:51:34', '2019-08-24 11:51:34'),
+(104, 'sahrul ependi', 'Laki-laki', '17', '2004-02-21', 'siswa', 'bunkawang', '', '', '2019-08-24 11:54:07', '2019-08-24 11:54:07'),
+(105, 'sahrul ependi', 'Laki-laki', '17', '2004-02-21', 'siswa', 'bunkawang', '', '', '2019-08-24 11:54:08', '2019-08-24 11:54:08'),
+(106, 'didik', 'Laki-laki', '29', '1989-12-07', 'guru', 'bunkate', '', '', '2019-08-24 11:56:53', '2019-08-24 11:56:53'),
+(107, 'didik', 'Laki-laki', '29', '1989-12-07', 'guru', 'bunkate', '', '', '2019-08-24 11:56:53', '2019-08-24 11:56:53'),
+(108, 'yayak', 'Perempuan', '17', '2002-05-03', 'siswa', 'bonjeruk', '', '', '2019-08-24 12:00:02', '2019-08-24 12:00:02'),
+(109, 'moh.alpian', 'Laki-laki', '22', '1997-02-27', 'mahasiswa', 'puyung', '', '', '2019-08-24 12:04:24', '2019-08-24 12:04:24'),
+(110, 'calisa', 'Perempuan', '10', '2009-10-05', 'siswa', 'gelondong', '', '', '2019-08-24 12:06:19', '2019-08-24 12:06:19');
 
 -- --------------------------------------------------------
 
@@ -298,7 +319,16 @@ INSERT INTO `perawatan` (`id_perawatan`, `diagnosa`, `terapi`, `biaya`, `keteran
 (161, NULL, 'pasang lepas\r\nRB niti 012 power O\r\nRA 016x016 power C', 200000, NULL, '86', '2019-08-07', '2019-08-07 17:08:00', '2019-08-07 17:08:00'),
 (162, NULL, 'ganti NITI 014 RB\r\npasang lepas', 150000, NULL, '30', '2019-08-08', '2019-08-08 17:08:00', '2019-08-08 17:08:00'),
 (163, NULL, 'pasang lepas 36', 150000, NULL, '61', '2019-08-08', '2019-08-08 18:08:00', '2019-08-08 18:08:00'),
-(165, '15 pulpitis kronis', 'dycal  zinc phospat GIC', 200000, '', '42', '2019-08-09', '2019-08-09 09:41:31', '2019-08-09 09:41:31');
+(165, '15 pulpitis kronis', 'dycal  zinc phospat GIC', 200000, '', '42', '2019-08-09', '2019-08-09 09:41:31', '2019-08-09 09:41:31'),
+(166, '', 'kontrol, pasang lepas BT 26,36,46, ganti BT 26\r\n', 200000, '', '47', '2018-10-13', '2019-08-13 09:57:10', '2019-08-13 09:57:10'),
+(167, 'crowded RA', 'insersi orto RA', 1500000, '', '90', '2019-08-16', '2019-08-16 13:54:02', '2019-08-16 13:54:02'),
+(168, '', 'power C 25, 45', 150000, '', '73', '2019-08-20', '2019-08-20 09:09:27', '2019-08-20 09:09:27'),
+(169, '', 'Kontrol power O\r\nPasang lepas 35\r\nExo GR 14', 250000, '', '62', '2019-08-22', '2019-08-22 09:57:30', '2019-08-22 09:57:30'),
+(170, 'pindah kontrol', 'niti 012 RA, pasang lepas 25, power o', 200000, '', '92', '2019-08-22', '2019-08-22 11:49:12', '2019-08-22 11:49:12'),
+(171, '36 46 pulpitis kronis \r\n16 karies dentin\r\ngingivitis RA RB', '36 46 eugenol ts\r\n16 gic\r\nscaling ra rb', 600000, 'premed', '93', '2019-08-22', '2019-08-22 11:53:50', '2019-08-22 11:53:50'),
+(172, '', 'power C', 200000, '', '94', '2019-08-22', '2019-08-22 11:59:31', '2019-08-22 11:59:31'),
+(173, 'protrusi RA', 'insersi orto RA', 2000000, '', '38', '2019-07-12', '2019-08-22 12:00:59', '2019-08-22 12:00:59'),
+(174, '', 'pasang lepas', 150000, '', '38', '2019-08-22', '2019-08-22 12:01:50', '2019-08-22 12:01:50');
 
 -- --------------------------------------------------------
 
@@ -351,13 +381,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT for table `perawatan`
 --
 ALTER TABLE `perawatan`
-  MODIFY `id_perawatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
+  MODIFY `id_perawatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
 
 --
 -- AUTO_INCREMENT for table `user`
